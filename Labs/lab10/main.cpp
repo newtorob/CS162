@@ -1,3 +1,10 @@
+/*********************************************************************
+** Program Filename: main.cpp
+** Author: Robert Newton
+** Date: 12/05/2016
+** Description: lab 10 - The main file for lab 10, runs recursive
+**and non recursive, prints to the user
+*********************************************************************/
 #include "iFibb.hpp"
 #include "nFibb.hpp"
 
@@ -6,12 +13,14 @@
 #include <ctime>
 #include <fstream>
 
-using namespace std;
+using std::endl;
+using std::cout;
+using std::cin;
 
 int main() {
 
-  // using unsigned long long to hold the largest fibonacci numbers possible
-  unsigned long long t = 1;
+ 
+  int t = 1;
 
   while (t < 94) { // only run until the 93rd fibonacci number because of storage capacity
 

@@ -16,7 +16,7 @@ IFibb::~IFibb()
 unsigned long long IFibb::Fibonacci(const unsigned long long &t)
 {
     if (t == 0)
-    
+
         return 0;
 
     else if (t == 1)
@@ -30,6 +30,6 @@ void IFibb::fiboPrint()
 {
     unsigned long long fiboNum = Fibonacci(*t_);
 
-    cout << *n_ << "The Fibonacci number: " << fiboNum << endl;
+    cout << *t_ << "th Fibo number is: " << fiboNum << endl;
 
 }

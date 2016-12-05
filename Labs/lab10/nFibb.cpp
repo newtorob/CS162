@@ -1,3 +1,10 @@
+/*********************************************************************
+** Program Filename: queue.cpp
+** Author: Robert Newton
+** Date: 11/28/2016
+** Description: lab 9 - The implementation of queue for lab 9
+*********************************************************************/
+
 #include "nFibb.hpp"
 #include <iostream>
 
@@ -23,7 +30,7 @@ unsigned long long NFibb::Fibonacci(const unsigned long long &t)
 
     while(count < t)
     {
-        unsigned long long temp = wo;
+        unsigned long long temp = two;
 
         two = one + two;
 
@@ -45,5 +52,5 @@ void NFibb::fiboPrint()
 {
     const unsigned long long total = Fibonacci(*t_);
 
-    cout << *t_ << "The fibo number is: " <<total << endl;
+    cout << *t_ << " th fibo number is: " <<total << endl;
 }
