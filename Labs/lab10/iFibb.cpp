@@ -7,24 +7,29 @@ using std::endl;
 IFibb::IFibb()
 {}
 
-IFibb::IFibb(const unsigned long long &n):n_(&n)
+IFibb::IFibb(const unsigned long long &t):t_(&t)
 {}
 
 IFibb::~IFibb()
 {}
 
-unsigned long long IFibb::Fibonacci(const unsigned long long &n)
+unsigned long long IFibb::Fibonacci(const unsigned long long &t)
 {
-    if (n == 0)
+    if (t == 0)
+    
         return 0;
-    else if (n == 1)
+
+    else if (t == 1)
+
         return 1;
-    return Fibonacci(n-1) + Fibonacci(n-2);
+
+    return Fibonacci(t-1) + Fibonacci(t-2);
 }
 
 void IFibb::fiboPrint()
 {
-    unsigned long long fiboNum = Fibonacci(*n_);
+    unsigned long long fiboNum = Fibonacci(*t_);
+
     cout << *n_ << "The Fibonacci number: " << fiboNum << endl;
 
 }

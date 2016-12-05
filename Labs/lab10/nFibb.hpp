@@ -4,15 +4,21 @@
 class NFibb {
 
     public:
-        NFibb(const unsigned long long &n);
+
+        NFibb(const unsigned long long &t);
+
         virtual ~NFibb();
-        void fiboPrint;
+
+        void fiboPrint();
 
 
     private:
+    
         NFibb();
-        unsigned long long Fibonacci(const unsigned long long &n);
-        const unsigned long long* n_;
+
+        unsigned long long Fibonacci(const unsigned long long &t);
+
+        const unsigned long long* t_;
 
 };
 

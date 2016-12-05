@@ -7,33 +7,43 @@ using std::cout;
 NFibb::NFibb() 
 {}
 
-NFibb::NFibb(const unsigned long long &n):n_(&n)
+NFibb::NFibb(const unsigned long long &t):t_(&t)
 {}
 
 NFibb::~NFibb()
 {}
 
-unsigned long long NFibb::Fibonacci(const unsigned long long &n)
+unsigned long long NFibb::Fibonacci(const unsigned long long &t)
 {
-    unsigned long long first =0;
-    usigned long long second =1;
-    unsigned long long counter =2;
-    while(counter < n)
+    unsigned long long one =0;
+
+    unsigned long long two =1;
+
+    unsigned long long count =2;
+
+    while(count < t)
     {
-        unsigned long long temp=second;
-        second=first+second;
-        first=temp;
-        ++counter;
+        unsigned long long temp = wo;
+
+        two = one + two;
+
+        one = temp;
+        
+        ++count;
     }
 
-    if(n==0)
+    if(t==0)
+
         return 0;
+
     else
-        return first+second;
+
+        return one + two;
 }
 
 void NFibb::fiboPrint()
 {
-    const unsigned long long result = Fibonacci(*n_);
-    cout << *n_ << "The fibonacci number: " <<result << endl;
+    const unsigned long long total = Fibonacci(*t_);
+
+    cout << *t_ << "The fibo number is: " <<total << endl;
 }
