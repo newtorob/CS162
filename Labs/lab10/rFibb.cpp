@@ -1,86 +1,74 @@
 /*********************************************************************
-** Program Filename: nFibb.cpp
+** Program Filename: rFibb.cpp
 ** Author: Robert Newton
 ** Date: 12/04/2016
-** Description: Implementation file for the NFib
-class which is a nonrecursive function & uses iteration
+** Description: Implementation file for the rFib
+class which is a recursive function & uses iteration
 to calculate fibonacci numbers.
 
 ** Any and all examples taken and modified from the provided link:
 https://www.codeproject.com/tips/109443/fibonacci-recursive-and-non-recursive-c
 *********************************************************************/
 
-#include "nFibb.hpp"
 #include <iostream>
+#include "rFibb.hpp"
 
-using std::endl;
 using std::cout;
+using std::endl;
+
 
 /*********************************************************************
-** Function: NFibb
+** Function: RFibb
 ** Parameters:
 **Description: constructor
 *********************************************************************/
-NFibb::NFibb()
+RFibb::RFibb()
 {}
 
 /*********************************************************************
-** Function: ~NFibb
+** Function: ~RFibb
 ** Parameters:
 **Description: destructor
 *********************************************************************/
-NFibb::~NFibb()
+
+RFibb::~RFibb()
 {}
 
 /*********************************************************************
-** Function: NFibb
-** Parameters:const unsigned long long
-**Description: constructor
+** Function: RFibb
+** Parameters: const unsigned long long
+**Description:constructor
 *********************************************************************/
-NFibb::NFibb(const unsigned long long &t):t_(&t)
+RFibb::RFibb(const unsigned long long &t):t_(&t)
 {}
 
 /*********************************************************************
 ** Function: Fibo
 ** Parameters: const unsigned long long
-**Description:  Implements the calculation of the fibonacci number
+**Description: Implements the calculation of the fibonacci number
 *********************************************************************/
-unsigned long long NFibb::Fibo(const unsigned long long &t)
+unsigned long long RFibb::Fibo(const unsigned long long &t)
 {
-    unsigned long long first =0;
-
-    unsigned long long second =1;
-
-    unsigned long long counter =2;
-
-    while(counter < t)
-    {
-        unsigned long long temp = second;
-
-        second = first + second;
-
-        first = temp;
-
-        ++counter;
-    }
-
-    if(t==0)
+    if (t == 0)
 
         return 0;
 
-    else
+    else if (t == 1)
 
-        return first + second;
+        return 1;
+
+    return Fibo(t-1) + Fibo(t-2);
 }
 
 /*********************************************************************
 ** Function: fiboPrint
-** Parameters: 
-**Description:  prints
+** Parameters:
+**Description: prints the fibonacci number
 *********************************************************************/
-void NFibb::fiboPrint()
+void RFibb::fiboPrint()
 {
-    const unsigned long long total = Fibo(*t_);
+    unsigned long long fiboNum = Fibo(*t_);
 
-    cout << *t_ << " th fibo number is: " <<total << endl;
+    cout << *t_ << "th Fibonacci number is: " << fiboNum << endl;
+
 }
